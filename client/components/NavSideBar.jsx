@@ -1,19 +1,27 @@
 import React from "react";
+import { AiOutlineDashboard } from "react-icons/ai";
+import { BsTruck, BsPeople } from "react-icons/bs";
+import { GiPayMoney } from "react-icons/gi";
 
-const NavLink = ({ tag }) => {
-  return <a className="mt-5">{tag} </a>;
+const NavButton = ({ tag, icon }) => {
+  return (
+    <button className="mt-5 flex flex-row mx-5 items-center hover:bg-blue-400 ">
+      {icon}
+      <div className="mx-2">{tag}</div>
+    </button>
+  );
 };
 
 const NavSideBar = () => {
   return (
-    <div className="flex flex-col w-56 h-full border-black border-r-2">
+    <div className="flex flex-col w-56 h-screen border-black border-r-2 bg-blue-200">
       <div className="font-bold py-5 border-grey-400 border-b-4">
         Company Name
       </div>
-      <NavLink tag="DashBoard" />
-      <NavLink tag="Vehicles" />
-      <NavLink tag="Administration" />
-      <NavLink tag="test" />
+      <NavButton tag="DashBoard" icon={<AiOutlineDashboard />} />
+      <NavButton tag="Clients" icon={<BsPeople />} />
+      <NavButton tag="Vehicles" icon={<BsTruck />} />
+      <NavButton tag="Purchasing" icon={<GiPayMoney />} />
     </div>
   );
 };
