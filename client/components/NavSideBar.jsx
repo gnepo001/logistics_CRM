@@ -2,13 +2,17 @@ import React from "react";
 import { AiOutlineDashboard } from "react-icons/ai";
 import { BsTruck, BsPeople } from "react-icons/bs";
 import { GiPayMoney } from "react-icons/gi";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const NavButton = ({ tag, icon }) => {
   return (
-    <button className="mt-5 flex flex-row mx-5 items-center hover:bg-blue-400 ">
-      {icon}
-      <div className="mx-2">{tag}</div>
-    </button>
+    <Link href="/">
+      <button className="mt-5 flex flex-row mx-10 items-center border-solid rounded-xl hover:bg-blue-400">
+        {icon}
+        <div className="mx-2">{tag}</div>
+      </button>
+    </Link>
   );
 };
 
