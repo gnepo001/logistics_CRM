@@ -2,32 +2,29 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
+import Dashboard from "../components/Dashboard";
+
 import axios from "axios";
 
 // interface IProps{
 //   drivers:
 // }
 
-const Home = ({ drivers }) => {
-  //console.log(drivers[0].firstname);
-  //drivers.map((driver) => console.log(driver.firstname));
+const Home = ({ drivers, expenses }) => {
   return (
     <div className="">
-      <h1>hello</h1>
-      <h1>hello</h1>
-      {drivers.map((driver) => (
-        <h1 key={driver._id}>{driver.firstname}</h1>
-      ))}
+      <Dashboard drivers={drivers} expenses={expenses} />
     </div>
   );
 };
 
 export const getServerSideProps = async () => {
-  const { data } = await axios.get("http://localhost:5010/");
-  /*console.log(response.data[0].firstname);*/
+  const drivers = await axios.get("http://localhost:5010/drivers");
+  const expenses = await axios.get("http://localhost:5010/expenses");
   return {
     props: {
-      drivers: data,
+      drivers: drivers.data,
+      expenses: expenses.data,
     },
   };
 };
