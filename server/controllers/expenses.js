@@ -1,9 +1,9 @@
-import driver from "../models/driver.js";
+import expense from "../models/expense.js";
 
 //fetchdata
-export const getPosts = async (req, res) => {
+export const getExpenses = async (req, res) => {
   try {
-    const postMessages = await driver.find();
+    const postMessages = await expense.find();
     res.status(200).json(postMessages);
   } catch (error) {
     console.log("test2");
