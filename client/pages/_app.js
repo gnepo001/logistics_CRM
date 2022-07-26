@@ -6,10 +6,12 @@ import NavSideBar from "../components/NavSideBar";
 function MyApp({ Component, pageProps, drivers }) {
   return (
     <div className="">
-      <InfoBar />
       <div className="flex flex-row">
         <NavSideBar />
-        <Component {...pageProps} />
+        <div className="flex flex-col w-full">
+          <InfoBar />
+          <Component {...pageProps} />
+        </div>
       </div>
     </div>
   );
