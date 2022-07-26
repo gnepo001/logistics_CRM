@@ -18,3 +18,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --white: #ffffff;
+  --cerulean: #00a7e1;
+  --black: #00171f;
+  --prussian: #003459;
+  --celadon: #007ea7;
+}
