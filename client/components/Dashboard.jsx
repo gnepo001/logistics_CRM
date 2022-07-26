@@ -2,8 +2,10 @@ import React from "react";
 
 const Dashboard = ({ drivers, expenses }) => {
   return (
-    <div className="p-12 flex flex-col">
-      <div className="flex flex-row">
+    <div className="flex flex-col my-2 ">
+      <h1 className="mx-5  py-3 font-bold">Dashboard</h1>
+      <div className="border-zinc-200 border-solid border-b-2" />
+      <div className="flex flex-row my-2 px-12">
         <div className="border-zinc-200 border-solid border-2">
           <h1 className="border-zinc-200 border-b-2">Drivers</h1>
           {drivers.map((driver) => (
@@ -15,7 +17,9 @@ const Dashboard = ({ drivers, expenses }) => {
         </div>
 
         <div className="border-zinc-200 border-solid border-2 mx-5">
-          <h1 className="border-zinc-200 border-b-2">Trips (current week)</h1>
+          <h1 className="border-zinc-200 border-b-2">Vehicles</h1>
+          <h1>Active </h1>
+          <h1>Issue</h1>
         </div>
       </div>
       <div className="border-zinc-200 border-solid border-2 mt-10">
