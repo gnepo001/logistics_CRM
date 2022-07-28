@@ -22,7 +22,7 @@ const NavSideBar = () => {
       className="flex flex-col w-56 h-screen border-black border-r-2"
       style={{ backgroundColor: "var(--cerulean)" }}
     >
-      <div className="font-bold py-5 border-grey-400 border-b-2 mx-5">
+      <div className="font-bold py-5 border-grey-400 border-b-2 mx-5 mt-4">
         Company Name
       </div>
       <NavButton tag="DashBoard" icon={<AiOutlineDashboard />} link={"/"} />

@@ -5,7 +5,7 @@ import NavSideBar from "../components/NavSideBar";
 
 function MyApp({ Component, pageProps, drivers }) {
   return (
-    <div className="">
+    <div className="bg-slate-100">
       <div className="flex flex-row">
         <NavSideBar />
         <div className="flex flex-col w-full">
