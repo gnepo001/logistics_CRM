@@ -7,7 +7,7 @@ const clients = () => {
   return (
     <div>
       <Title title="Clients" />
-      <div className="border-zinc-200 border-solid border-2 mt-5 mx-5 ">
+      <div className="border-zinc-200 border-solid border-2 mt-5 mx-5 rounded-md bg-white">
         <div className="flex flex-row justify-around">
           <div>
             <h1>Client</h1>

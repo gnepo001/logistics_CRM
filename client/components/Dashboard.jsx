@@ -7,7 +7,7 @@ const Dashboard = ({ drivers, expenses }) => {
     <div className="flex flex-col">
       <Title title="Dashboard" />
       <div className="flex flex-row my-2 px-12">
-        <div className="border-zinc-200 border-solid border-2 bg-white">
+        <div className="border-zinc-200 border-solid border-2 rounded-md bg-white">
           <h1 className="border-zinc-200 border-b-2">Drivers</h1>
           {drivers.map((driver) => (
             <div className="flex" key={driver._id}>
@@ -16,7 +16,7 @@ const Dashboard = ({ drivers, expenses }) => {
             </div>
           ))}
         </div>
-        <div className="border-zinc-200 border-solid border-2 mx-5 bg-white">
+        <div className="border-zinc-200 border-solid border-2 mx-5 rounded-md bg-white">
           <h1 className="border-zinc-200 border-b-2">Vehicles</h1>
           <h1>Active </h1>
           <h1>Issue</h1>
