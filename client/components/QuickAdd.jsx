@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Vehicle } from "./QuickAddForms";
+import { VehicleForm, ClientForm } from "./QuickAddForms";
 
 const QuickAdd = () => {
   const [showForm, setShowForm] = useState(false);
@@ -14,7 +14,9 @@ const QuickAdd = () => {
     let form = null;
     switch (type) {
       case "vehicle":
-        setForm(<Vehicle />);
+        setForm(<VehicleForm />);
+      case "client":
+        setForm(<ClientForm />);
         break;
     }
     setShowForm(!showForm);
@@ -36,10 +38,10 @@ const QuickAdd = () => {
       <div className="absolute z-10 top-10 right-3 bg-white w-64 flex flex-col border-zinc-200 border-solid border-2 rounded-xl shadow-xl pb-5">
         <span className="text-center text-sm font-bold">Quick Add</span>
 
-        <Button content="Invoice" action="vehicle" />
-        {/* <Button content="Client" />
-        <Button content="Driver" />
-        <Button content="Expense" /> */}
+        <Button content="Vehicle" action="vehicle" />
+        <Button content="Client" action="client" />
+        <Button content="Driver" action="driver" />
+        <Button content="Expense" action="expense" />
       </div>
       {showForm && Form}
     </div>
