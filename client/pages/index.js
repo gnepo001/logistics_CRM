@@ -7,10 +7,6 @@ import Dashboard from "../components/Dashboard";
 
 import axios from "axios";
 
-// interface IProps{
-//   drivers:
-// }
-
 const Home = ({ drivers, expenses }) => {
   return (
     <div className="">
