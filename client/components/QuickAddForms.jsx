@@ -2,7 +2,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import axios from "axios";
 import { useState } from "react";
 
-export const Vehicle = () => {
+export const VehicleForm = () => {
   const [vehicle, setVehicle] = useState({
     model: "",
     make: "",

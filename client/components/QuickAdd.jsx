@@ -6,15 +6,11 @@ const QuickAdd = () => {
   const [showForm, setShowForm] = useState(false);
   const [Form, setForm] = useState(null);
 
-  const Form2 = ({ data }) => {
-    return <div>{data}</div>;
-  };
-
   const handleTest = (type) => {
-    let form = null;
     switch (type) {
       case "vehicle":
         setForm(<VehicleForm />);
+        break;
       case "client":
         setForm(<ClientForm />);
         break;
@@ -40,8 +36,8 @@ const QuickAdd = () => {
 
         <Button content="Vehicle" action="vehicle" />
         <Button content="Client" action="client" />
-        <Button content="Driver" action="driver" />
-        <Button content="Expense" action="expense" />
+        {/* <Button content="Driver" action="driver" />
+        <Button content="Expense" action="expense" /> */}
       </div>
       {showForm && Form}
     </div>
