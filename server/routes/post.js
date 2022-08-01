@@ -1,13 +1,21 @@
 import express from "express";
-import { getDrivers } from "../controllers/drivers.js";
-import { getExpenses } from "../controllers/expenses.js";
-import { getVehicles, createPost } from "../controllers/vehicles.js";
+import { getVehicles, createVehicle } from "../controllers/vehicles.js";
+import { getClients, createClient } from "../controllers/clients.js";
+import { getDrivers, createDriver } from "../controllers/drivers.js";
+import { getExpenses, createExpense } from "../controllers/expenses.js";
 
 const router = express.Router();
 
+//--Get Routes
+router.get("/vehicles", getVehicles);
+router.get("/clients", getClients);
 router.get("/drivers", getDrivers);
 router.get("/expenses", getExpenses);
-router.get("/vehicles", getVehicles);
-router.post("/vehicles", createPost);
+
+//--Post Routes
+router.post("/vehicles", createVehicle);
+router.post("/clients", createClient);
+router.post("/drivers", createDriver);
+router.post("/expenses", createExpense);
 
 export default router;
