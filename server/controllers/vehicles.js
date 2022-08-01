@@ -9,10 +9,9 @@ export const getVehicles = async (req, res) => {
   }
 };
 
-export const createPost = async (req, res) => {
-  const post = req.body;
-  const newPost = new vehicle(post.vehicle);
-  console.log(newPost);
+export const createVehicle = async (req, res) => {
+  const data = req.body;
+  const newPost = new vehicle(data);
   try {
     await newPost.save();
     res.status(201).json(newPost);
