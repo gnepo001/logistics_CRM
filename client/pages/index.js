@@ -11,11 +11,11 @@ const Home = ({ drivers, expenses }) => {
   return (
     <div className="">
       <Dashboard drivers={drivers} expenses={expenses} />
-      <Link href="/clients">Clientss</Link>
     </div>
   );
 };
 
+//Fetch Data for application
 export const getServerSideProps = async () => {
   const drivers = await axios.get("http://localhost:5010/drivers");
   const expenses = await axios.get("http://localhost:5010/expenses");
