@@ -3,8 +3,12 @@ import { IoMdAddCircleOutline } from "react-icons/io";
 
 import QuickAdd from "./QuickAdd";
 
+// ### Top Bar
+
 const InfoBar = () => {
+  //Pop Over state
   const [showpop, setShowpop] = useState(false);
+
   const handlePopover = () => {
     setShowpop(!showpop);
   };

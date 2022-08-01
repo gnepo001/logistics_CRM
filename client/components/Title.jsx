@@ -1,5 +1,7 @@
 import React from "react";
 
+// ### Title Component for top of page
+
 const Title = ({ title }) => {
   return (
     <div className="bg-white">

@@ -1,10 +1,11 @@
 import React from "react";
+import Link from "next/link";
+
 import { AiOutlineDashboard } from "react-icons/ai";
 import { BsTruck, BsPeople } from "react-icons/bs";
 import { GiPayMoney, GiSteeringWheel } from "react-icons/gi";
-import Link from "next/link";
-import { useRouter } from "next/router";
 
+//Nav side button component
 const NavButton = ({ tag, icon, link }) => {
   return (
     <Link href={link}>
