@@ -1,12 +1,21 @@
 import React, { useState } from "react";
 
-import { VehicleForm, ClientForm } from "./QuickAddForms";
+import {
+  VehicleForm,
+  ClientForm,
+  DriverForm,
+  ExpenseForm,
+} from "./QuickAddForms";
 
 const QuickAdd = () => {
+  //sets whether or not to display form
   const [showForm, setShowForm] = useState(false);
+  //sets Form to be displayed
   const [Form, setForm] = useState(null);
 
-  const handleTest = (type) => {
+  // Handle function to set form to be displayed
+  const handleSetForm = (type) => {
+    // switch statement to set form
     switch (type) {
       case "vehicle":
         setForm(<VehicleForm />);
@@ -14,15 +23,22 @@ const QuickAdd = () => {
       case "client":
         setForm(<ClientForm />);
         break;
+      case "driver":
+        setForm(<DriverForm />);
+        break;
+      case "expense":
+        setForm(<ExpenseForm />);
+        break;
     }
     setShowForm(!showForm);
   };
 
+  //Button Component
   const Button = ({ content, action }) => {
     return (
       <button
         className="rounded-xl text-sm mx-10 mt-1 bg-[#00A7E1] hover:bg-[#007EA7] text-white"
-        onClick={() => handleTest(action)}
+        onClick={() => handleSetForm(action)}
       >
         {content}
       </button>
@@ -36,8 +52,8 @@ const QuickAdd = () => {
 
         <Button content="Vehicle" action="vehicle" />
         <Button content="Client" action="client" />
-        {/* <Button content="Driver" action="driver" />
-        <Button content="Expense" action="expense" /> */}
+        <Button content="Driver" action="driver" />
+        <Button content="Expense" action="expense" />
       </div>
       {showForm && Form}
     </div>
