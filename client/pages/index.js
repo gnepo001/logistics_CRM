@@ -19,6 +19,7 @@ const Home = ({ drivers, expenses }) => {
 export const getServerSideProps = async () => {
   const drivers = await axios.get("http://localhost:5010/drivers");
   const expenses = await axios.get("http://localhost:5010/expenses");
+
   return {
     props: {
       drivers: drivers.data,
