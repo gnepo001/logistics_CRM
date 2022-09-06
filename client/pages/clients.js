@@ -3,9 +3,8 @@ import { MdOutlineExpandMore } from "react-icons/md";
 import axios from "axios";
 import Link from "next/link";
 
+//imports standard title for page
 import Title from "../components/Title";
-
-const gloablId = null;
 
 const clients = ({ clients }) => {
   return (
@@ -17,17 +16,20 @@ const clients = ({ clients }) => {
           <h1>Balance</h1>
           <h1>Trips</h1>
         </div>
+
+        {/* maps out all clients into sheet */}
         {clients.map((client) => (
           <div
             key={client._id}
             className="flex flex-row justify-around text-[003459] "
           >
-            {/* <Link href="/clientInfo"> */}
+            {/*Links to specific data for client*/}
             <Link
               href={{
-                pathname: "/clients/[id]",
+                pathname: `/clients/${client._id}`,
                 query: {
-                  id: client._id,
+                  //id: client._id,
+                  clientname: client.name, //send in data for specific client page
                 },
               }}
             >
@@ -45,6 +47,7 @@ const clients = ({ clients }) => {
   );
 };
 
+//fetch all clients in database
 export const getServerSideProps = async () => {
   const clients = await axios.get("http://localhost:5010/clients");
   return {

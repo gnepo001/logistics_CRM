@@ -2,8 +2,18 @@
 
 # Packages/libs used
 
+Frontend
+
 - nextjs
 - tailwindcss
+
+Backend
+
+- Nodejs
+- cors
+- express
+- mongoose
+- nodemon
 
 # Uses
 
