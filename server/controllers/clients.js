@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 import client from "../models/client.js";
+import invoiceClient from "../models/invoiceClient.js";
+import invoice from "../models/invoiceClient.js";
 
 //collects all clients
 export const getClients = async (req, res) => {
@@ -32,6 +34,28 @@ export const createClient = async (req, res) => {
   try {
     await newClient.save();
     res.status(201).json(newClient);
+  } catch (error) {
+    res.status(409).json({ message: error.message });
+  }
+};
+
+//client Invoices
+export const createInvoice = async (req, res) => {
+  const data = req.body;
+  const newInvoice = new invoice(data);
+  try {
+    await newInvoice.save();
+    res.status(201).json(newInvoice);
+  } catch (error) {
+    res.status(409).json({ message: error.message });
+  }
+};
+
+export const fetchInvoices = async (req, res) => {
+  const client = req.query.client; //gets data from url query
+  try {
+    const data = await invoiceClient.find({ client: client }); //finds documents with spefific data
+    res.status(200).json(data);
   } catch (error) {
     res.status(409).json({ message: error.message });
   }
