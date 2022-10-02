@@ -1,4 +1,8 @@
-![alt text](./client/img/underconstruction.png)
+<img src="./client/img/underconstruction.png" width=100% height=350px/>
+
+DashBoard Plan
+
+<img src="./client/img/dashboard_sketch.jpg" width=500px height=300px/>
 
 # Packages/libs used
 
@@ -6,6 +10,7 @@ Frontend
 
 - nextjs
 - tailwindcss
+- moment.js
 
 Backend
 
