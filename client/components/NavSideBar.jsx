@@ -29,8 +29,8 @@ const NavSideBar = () => {
       <NavButton tag="DashBoard" icon={<AiOutlineDashboard />} link={"/"} />
       <NavButton tag="Clients" icon={<BsPeople />} link={"/clients"} />
       <NavButton tag="Vehicles" icon={<BsTruck />} link={"/vehicles"} />
-      <NavButton tag="Drivers" icon={<GiSteeringWheel />} link={"/"} />
-      <NavButton tag="Purchasing" icon={<GiPayMoney />} link={"/"} />
+      <NavButton tag="Drivers" icon={<GiSteeringWheel />} link={"/drivers"} />
+      <NavButton tag="Purchasing" icon={<GiPayMoney />} link={"/expenses"} />
     </div>
   );
 };

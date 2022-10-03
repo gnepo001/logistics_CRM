@@ -111,6 +111,7 @@ export const DriverForm = () => {
   const [driver, setDriver] = useState({
     firstname: "",
     lastname: "",
+    startdate: "",
   });
 
   const handleSubmitDriver = async (e) => {
@@ -124,15 +125,22 @@ export const DriverForm = () => {
         <form className="mx-8 flex flex-col" onSubmit={handleSubmitDriver}>
           <input
             className="border-zinc-200 border-solid border-2 mt-1"
-            placeholder="name"
+            placeholder="First Name"
             onChange={(e) =>
               setDriver({ ...driver, firstname: e.target.value })
             }
           />
           <input
             className="border-zinc-200 border-solid border-2 mt-1"
-            placeholder="balance"
+            placeholder="Last Name"
             onChange={(e) => setDriver({ ...driver, lastname: e.target.value })}
+          />
+          <input
+            className="border-zinc-200 border-solid border-2 mt-1"
+            placeholder="Start Date"
+            onChange={(e) =>
+              setDriver({ ...driver, startdate: e.target.value })
+            }
           />
           <button
             className="bg-[#00A7E1] hover:bg-[#007EA7] mt-2 rounded-lg"
@@ -148,8 +156,12 @@ export const DriverForm = () => {
 
 export const ExpenseForm = () => {
   const [expense, setExpense] = useState({
+    date: "",
     type: "",
-    cost: null,
+    name: "",
+    location: "",
+    price: null,
+    employee: "",
   });
 
   const handleSubmitExpense = async (e) => {
@@ -163,13 +175,39 @@ export const ExpenseForm = () => {
         <form className="mx-8 flex flex-col" onSubmit={handleSubmitExpense}>
           <input
             className="border-zinc-200 border-solid border-2 mt-1"
+            placeholder="date"
+            name="date"
+            value={expense.date}
+            onChange={(e) => setExpense({ ...expense, date: e.target.value })}
+          />
+          <input
+            className="border-zinc-200 border-solid border-2 mt-1"
             placeholder="type"
             onChange={(e) => setExpense({ ...expense, type: e.target.value })}
           />
           <input
             className="border-zinc-200 border-solid border-2 mt-1"
-            placeholder="cost"
-            onChange={(e) => setExpense({ ...expense, cost: e.target.value })}
+            placeholder="name"
+            onChange={(e) => setExpense({ ...expense, name: e.target.value })}
+          />
+          <input
+            className="border-zinc-200 border-solid border-2 mt-1"
+            placeholder="location"
+            onChange={(e) =>
+              setExpense({ ...expense, location: e.target.value })
+            }
+          />
+          <input
+            className="border-zinc-200 border-solid border-2 mt-1"
+            placeholder="price"
+            onChange={(e) => setExpense({ ...expense, price: e.target.value })}
+          />
+          <input
+            className="border-zinc-200 border-solid border-2 mt-1"
+            placeholder="employee"
+            onChange={(e) =>
+              setExpense({ ...expense, employee: e.target.value })
+            }
           />
           <button
             className="bg-[#00A7E1] hover:bg-[#007EA7] mt-2 rounded-lg"
