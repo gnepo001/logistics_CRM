@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/dist/client/router";
 
 import axios from "axios";
+import moment from "moment";
 
 import ClientTitle from "./ClientTitle";
 
@@ -65,7 +66,7 @@ const ClientInfo = () => {
         {clientInvoices &&
           clientInvoices.map((invoice) => (
             <div key={invoice._id} className="flex justify-around">
-              <div>{invoice.date}</div>
+              <div>{moment(invoice.date).format("M-D-YYYY")}</div>
               <div>{invoice.from}</div>
               <div>{invoice.to}</div>
               <div>{invoice.price}</div>
