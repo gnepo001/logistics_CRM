@@ -8,7 +8,11 @@ import {
   fetchInvoices,
 } from "../controllers/clients.js";
 import { getDrivers, createDriver } from "../controllers/drivers.js";
-import { getExpenses, createExpense } from "../controllers/expenses.js";
+import {
+  getExpenses,
+  createExpense,
+  getExpenseByType,
+} from "../controllers/expenses.js";
 
 const router = express.Router();
 
@@ -21,6 +25,7 @@ router.get("/expenses", getExpenses);
 //--FindBy Routes
 router.get("/clients/:id", findById);
 router.get("/clients/:id/fetch", fetchInvoices);
+router.get("/expenses/fetchtype", getExpenseByType);
 
 //--Post Routes
 router.post("/vehicles", createVehicle);

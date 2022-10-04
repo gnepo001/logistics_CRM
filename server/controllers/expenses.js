@@ -20,3 +20,13 @@ export const createExpense = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 };
+
+export const getExpenseByType = async (req, res) => {
+  const type = req.query.Fuel;
+  try {
+    const data = await expense.find({ type: "Fuel" });
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(409).json({ message: error.message });
+  }
+};
