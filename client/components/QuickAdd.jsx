@@ -5,6 +5,7 @@ import {
   ClientForm,
   DriverForm,
   ExpenseForm,
+  EventForm,
 } from "./QuickAddForms";
 
 const QuickAdd = () => {
@@ -29,6 +30,9 @@ const QuickAdd = () => {
       case "expense":
         setForm(<ExpenseForm />);
         break;
+      case "event":
+        setForm(<EventForm />);
+        break;
     }
     setShowForm(!showForm);
   };
@@ -50,6 +54,7 @@ const QuickAdd = () => {
       <div className="absolute z-10 top-10 right-3 bg-white w-64 flex flex-col border-zinc-200 border-solid border-2 rounded-xl shadow-xl pb-5">
         <span className="text-center text-sm font-bold">Quick Add</span>
 
+        <Button content="Event" action="event" />
         <Button content="Vehicle" action="vehicle" />
         <Button content="Client" action="client" />
         <Button content="Driver" action="driver" />

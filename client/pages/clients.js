@@ -33,13 +33,13 @@ const clients = ({ clients }) => {
                 },
               }}
             >
-              <div className="flex flex-row hover:underline">
+              <div className="flex flex-row hover:underline w-1/5">
                 <MdOutlineExpandMore />
                 <a>{client.name}</a>
               </div>
             </Link>
-            <span>{client.balance}</span>
-            <span>{client.trips}</span>
+            <span className="w-1/5">{client.balance}</span>
+            <span className="w-1/5">{client.trips}</span>
           </div>
         ))}
       </div>
