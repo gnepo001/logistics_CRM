@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import moment from "moment";
+import axios from "axios";
+import { RiDeleteBin7Line } from "react-icons/ri";
+import { HiOutlinePencil } from "react-icons/hi";
 
 import Title from "./Title";
 import BarChart from "./BarChart";
 import LineChart from "./LineChart";
+
+import Editpopup from "../components/Editpopup.jsx";
 
 const Dashboard = ({ drivers, expenses, linedata, events }) => {
   const [userData, setUserData] = useState({
@@ -26,6 +31,18 @@ const Dashboard = ({ drivers, expenses, linedata, events }) => {
     ],
   });
 
+  const [pop, setPop] = useState(false);
+  const [editId, setEditId] = useState(null);
+
+  const handleDelete = async (id) => {
+    await axios.delete(`http://localhost:5010/events/${id}`);
+  };
+  const handleEdit = async (id) => {
+    setPop(true);
+    setEditId(id);
+    //await axios.patch(`http://localhost:5010/events/${id}`);
+  };
+
   return (
     <div className="flex flex-col">
       <Title title="Dashboard" />
@@ -44,6 +61,21 @@ const Dashboard = ({ drivers, expenses, linedata, events }) => {
                   </div>
                   <div className="w-2/5">{event.name}</div>
                   <div className="w-2/5">{event.description}</div>
+                  <button
+                    className="w-1/5"
+                    onClick={() => handleDelete(event._id)}
+                  >
+                    <RiDeleteBin7Line />
+                  </button>
+                  <button
+                    className="w-1/5"
+                    onClick={() => handleEdit(event._id)}
+                  >
+                    <HiOutlinePencil />
+                  </button>
+                  {pop && editId == event._id ? (
+                    <Editpopup id={event._id} />
+                  ) : null}
                 </div>
               ))
             : "No Events"}

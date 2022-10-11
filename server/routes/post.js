@@ -13,7 +13,12 @@ import {
   createExpense,
   getExpenseByType,
 } from "../controllers/expenses.js";
-import { createEvent, getEvents } from "../controllers/event.js";
+import {
+  createEvent,
+  getEvents,
+  deleteEvent,
+  updateEvent,
+} from "../controllers/event.js";
 
 const router = express.Router();
 
@@ -36,5 +41,11 @@ router.post("/clients/invoices", createInvoice);
 router.post("/drivers", createDriver);
 router.post("/expenses", createExpense);
 router.post("/events", createEvent);
+
+//--Delete Routes
+router.delete("/events/:id", deleteEvent);
+
+//--Update
+router.patch("/events/:id", updateEvent);
 
 export default router;
