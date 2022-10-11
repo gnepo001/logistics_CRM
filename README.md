@@ -31,9 +31,13 @@ Backend
 
 # wanted Features
 
-- ~~add multiple vehicles~~
-- ~~create Clients and add invoices~~
+- ~~add multiple vehicles~~ ✅
+- ~~create Clients and add invoices~~ ✅
 - db connected with CRUD
+  - ~~Create~~
+  - ~~Read~~
+  - Update
+  - ~~Delete~~
 - handle image receipts
 - login users Auth
 - display useful info on dashboard with different time period options
