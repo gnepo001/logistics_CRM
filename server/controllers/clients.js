@@ -60,3 +60,18 @@ export const fetchInvoices = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 };
+
+export const updateInvoice = async (req, res) => {
+  const { id: _id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(_id))
+    return res.status(404).send("No Invoice with that id");
+  const newInvoice = await invoice.findByIdAndUpdate(
+    _id,
+    {
+      completed: true,
+    },
+    { new: true }
+  );
+  res.json(newInvoice);
+};

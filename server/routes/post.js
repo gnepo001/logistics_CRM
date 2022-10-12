@@ -6,6 +6,7 @@ import {
   createClient,
   createInvoice,
   fetchInvoices,
+  updateInvoice,
 } from "../controllers/clients.js";
 import { getDrivers, createDriver } from "../controllers/drivers.js";
 import {
@@ -47,5 +48,6 @@ router.delete("/events/:id", deleteEvent);
 
 //--Update
 router.patch("/events/:id", updateEvent);
+router.patch("/clients/invoices/:id", updateInvoice);
 
 export default router;

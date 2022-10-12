@@ -9,6 +9,7 @@ const invoiceClientSchema = mongoose.Schema({
   loadType: String,
   price: Number,
   note: String,
+  completed: Boolean,
   createdAt: {
     type: Date,
     default: new Date(),
