@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-const Form = ({ clientname }) => {
+const Form = ({ clientname, balance }) => {
   // state for client invoice submission
   const [clientInvoice, setClientInvoice] = useState({
     client: clientname,
@@ -12,10 +12,12 @@ const Form = ({ clientname }) => {
     loadType: "",
     price: 0,
     note: "",
+    completed: false,
   });
 
   //Posts data to database
   const handleSubmit = async (e) => {
+    /////need to update the balance of the client
     await axios.post("http://localhost:5010/clients/invoices", clientInvoice);
   };
 
@@ -125,7 +127,7 @@ const ClientTitle = ({ title, balance, clientname }) => {
         </button>
       </div>
       <div className="border-zinc-200 border-solid border-b-2" />
-      {showForm && <Form clientname={clientname} />}
+      {showForm && <Form clientname={clientname} balance={balance} />}
     </div>
   );
 };
