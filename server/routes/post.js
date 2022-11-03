@@ -6,7 +6,8 @@ import {
   createClient,
   createInvoice,
   fetchInvoices,
-  updateInvoice,
+  updateInvoiceToPaid,
+  sumInvoices,
 } from "../controllers/clients.js";
 import { getDrivers, createDriver } from "../controllers/drivers.js";
 import {
@@ -26,6 +27,7 @@ const router = express.Router();
 //--Get Routes
 router.get("/vehicles", getVehicles);
 router.get("/clients", getClients);
+router.get("/sumInvoices", sumInvoices);
 router.get("/drivers", getDrivers);
 router.get("/expenses", getExpenses);
 router.get("/events", getEvents);
@@ -48,6 +50,6 @@ router.delete("/events/:id", deleteEvent);
 
 //--Update
 router.patch("/events/:id", updateEvent);
-router.patch("/clients/invoices/:id", updateInvoice);
+router.patch("/clients/invoices/:id", updateInvoiceToPaid);
 
 export default router;

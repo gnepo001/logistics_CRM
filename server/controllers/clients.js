@@ -61,7 +61,20 @@ export const fetchInvoices = async (req, res) => {
   }
 };
 
-export const updateInvoice = async (req, res) => {
+export const sumInvoices = async (req, res) => {
+  try {
+    const invoices = await invoiceClient.find();
+    let sum = 0;
+    for (let i = 0; i < invoices.length; i++) {
+      sum = sum + invoices[i].price;
+    }
+    res.status(200).json(sum);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
+export const updateInvoiceToPaid = async (req, res) => {
   const { id: _id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(_id))
