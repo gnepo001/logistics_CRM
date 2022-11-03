@@ -13,10 +13,19 @@ const vehicles = ({ vehicles }) => {
             key={vehicle._id}
             className="border-b-2 rounded-md bg-white w-1/6 flex flex-col shadow-sm"
           >
-            <span>{vehicle.make}</span>
-            <span>{vehicle.model}</span>
-            <span>{vehicle.year}</span>
-            <span>{vehicle.vin}</span>
+            <span className="text-center">{vehicle.make}</span>
+            <div className="flex flex-row">
+              <span className="text-gray-500">Model: </span>
+              <span>{vehicle.model}</span>
+            </div>
+            <div className="flex flex-row">
+              <span className="text-gray-500">Year: </span>
+              <span>{vehicle.year}</span>
+            </div>
+            <div className="flex flex-row">
+              <span className="text-gray-500">Vin: </span>
+              <span>{vehicle.vin}</span>
+            </div>
           </div>
         ))}
       </div>
