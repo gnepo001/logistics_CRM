@@ -4,13 +4,13 @@ import axios from "axios";
 import { RiDeleteBin7Line } from "react-icons/ri";
 import { HiOutlinePencil } from "react-icons/hi";
 
-import Title from "./Title";
-import BarChart from "./BarChart";
-import LineChart from "./LineChart";
+import Title from "../components/Title";
+import BarChart from "../components/BarChart";
+import LineChart from "../components/LineChart";
 
 import Editpopup from "../components/Editpopup.jsx";
 
-const Dashboard = ({ drivers, expenses, linedata, events }) => {
+const Dashboard = ({ drivers, sum, linedata, events }) => {
   const [userData, setUserData] = useState({
     labels: linedata.map((data) => moment(data.date).format("MM-DD-YY")),
     datasets: [
@@ -59,8 +59,8 @@ const Dashboard = ({ drivers, expenses, linedata, events }) => {
                   <div className="w-1/5">
                     {moment(event.date).format("MMM-DD")}
                   </div>
-                  <div className="w-2/5">{event.name}</div>
-                  <div className="w-2/5">{event.description}</div>
+                  <div className="w-2/5 truncate">{event.name}</div>
+                  <div className="w-2/5 truncate">{event.description}</div>
                   <button
                     className="w-1/5"
                     onClick={() => handleDelete(event._id)}
@@ -88,18 +88,13 @@ const Dashboard = ({ drivers, expenses, linedata, events }) => {
             <div className="flex flex-row">
               <div className="border-zinc-200 border-solid border-2 rounded-md bg-white w-1/2">
                 <h1 className="bg-[#007EA7] rounded-md text-white text-center w-full">
-                  Clients
+                  Total Income
                 </h1>
-                {drivers.map((driver) => (
-                  <div className="flex" key={driver._id}>
-                    <h1>{driver.firstname} &nbsp;</h1>
-                    <h1>{driver.lastname}</h1>
-                  </div>
-                ))}
+                <div>{sum}</div>
               </div>
               <div className="border-zinc-200 border-solid border-2 mx-5 rounded-md bg-white w-1/2">
                 <h1 className="bg-[#007EA7] rounded-md text-white text-center w-full">
-                  Vehicles
+                  Total Expenses
                 </h1>
                 <h1>Active </h1>
                 <h1>Issue</h1>
