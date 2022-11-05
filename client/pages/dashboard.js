@@ -48,7 +48,7 @@ const Dashboard = ({ drivers, sum, linedata, events }) => {
       <Title title="Dashboard" />
 
       {/* Top Row */}
-      <div className="flex flex-row mt-5 mx-10 h-1/3">
+      <div className="flex flex-row mt-5 mx-10 h-1/2">
         <div className=" border-zinc-200 border-solid border-2 rounded-md bg-white flex flex-col w-1/2">
           <h1 className="mb-1 bg-[#007EA7] rounded-md text-white text-center w-full">
             Calender
@@ -82,10 +82,10 @@ const Dashboard = ({ drivers, sum, linedata, events }) => {
         </div>
 
         {/* Quardernt 2 */}
-        <div className="flex flex-row my-0 px-12 w-1/2">
+        <div className="flex flex-row my-0 px-12 w-1/2 h-1/2">
           <div className="flex flex-col w-full">
             {/* Q2 Top row */}
-            <div className="flex flex-row">
+            <div className="flex flex-row h-1/2">
               <div className="border-zinc-200 border-solid border-2 rounded-md bg-white w-1/2">
                 <h1 className="bg-[#007EA7] rounded-md text-white text-center w-full">
                   Total Income
@@ -101,17 +101,19 @@ const Dashboard = ({ drivers, sum, linedata, events }) => {
               </div>
             </div>
             {/* Q2 bottom row */}
-            <div className="flex flex-row mt-5">
+            <div className="flex flex-row mt-5 h-1/2">
               <div className="border-zinc-200 border-solid border-2 rounded-md bg-white w-1/2">
-                <h1 className="bg-[#007EA7] rounded-md text-white text-center w-full">
+                <h1 className="bg-[#007EA7] rounded-md text-white text-center">
                   Drivers
                 </h1>
-                {drivers.map((driver) => (
-                  <div className="flex" key={driver._id}>
-                    <h1>{driver.firstname} &nbsp;</h1>
-                    <h1>{driver.lastname}</h1>
-                  </div>
-                ))}
+                <div className="h-4/5 overflow-y-scroll">
+                  {drivers.map((driver) => (
+                    <div className="flex truncate" key={driver._id}>
+                      <h1>{driver.firstname} &nbsp;</h1>
+                      <h1>{driver.lastname}</h1>
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className="border-zinc-200 border-solid border-2 mx-5 rounded-md bg-white w-1/2">
                 <h1 className="bg-[#007EA7] rounded-md text-white text-center w-full">

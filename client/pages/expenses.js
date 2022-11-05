@@ -17,7 +17,7 @@ const expenses = ({ expenses }) => {
           <h1>Empolyee</h1>
         </div>
         {expenses.map((cost) => (
-          <div className="flex flex-row text-center">
+          <div key={cost._id} className="flex flex-row text-center">
             <div className="w-1/5">{moment(cost.date).format("M-D-YYYY")}</div>
             <div className="w-1/5">{cost.type}</div>
             <div className="w-1/5">{cost.name}</div>
