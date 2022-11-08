@@ -8,7 +8,7 @@ import Title from "../components/Title";
 import BarChart from "../components/BarChart";
 import LineChart from "../components/LineChart";
 
-import Editpopup from "../components/Editpopup.jsx";
+import EditEvents from "../components/EditEvents.jsx";
 
 const Dashboard = ({ drivers, sum, linedata, events }) => {
   const [userData, setUserData] = useState({
@@ -55,26 +55,28 @@ const Dashboard = ({ drivers, sum, linedata, events }) => {
           </h1>
           {events
             ? events.map((event) => (
-                <div key={event._id} className="flex flex-row mx-5">
-                  <div className="w-1/5">
+                <div key={event._id} className="group flex flex-row mx-5">
+                  <div className="w-1/6">
                     {moment(event.date).format("MMM-DD")}
                   </div>
-                  <div className="w-2/5 truncate">{event.name}</div>
-                  <div className="w-2/5 truncate">{event.description}</div>
-                  <button
-                    className="w-1/5"
-                    onClick={() => handleDelete(event._id)}
-                  >
-                    <RiDeleteBin7Line />
-                  </button>
-                  <button
-                    className="w-1/5"
-                    onClick={() => handleEdit(event._id)}
-                  >
-                    <HiOutlinePencil />
-                  </button>
+                  <div className="w-1/3 truncate">{event.name}</div>
+                  <div className="w-1/3 truncate">{event.description}</div>
+                  <div className="invisible group-hover:visible w-1/6">
+                    <button
+                      className="w-1/2"
+                      onClick={() => handleDelete(event._id)}
+                    >
+                      <RiDeleteBin7Line />
+                    </button>
+                    <button
+                      className="w-1/2"
+                      onClick={() => handleEdit(event._id)}
+                    >
+                      <HiOutlinePencil />
+                    </button>
+                  </div>
                   {pop && editId == event._id ? (
-                    <Editpopup id={event._id} />
+                    <EditEvents id={event._id} />
                   ) : null}
                 </div>
               ))

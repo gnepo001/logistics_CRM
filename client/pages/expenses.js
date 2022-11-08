@@ -15,14 +15,16 @@ const expenses = ({ expenses }) => {
           <h1>Type</h1>
           <h1>Location</h1>
           <h1>Empolyee</h1>
+          <h1>Price</h1>
         </div>
         {expenses.map((cost) => (
           <div key={cost._id} className="flex flex-row text-center">
-            <div className="w-1/5">{moment(cost.date).format("M-D-YYYY")}</div>
-            <div className="w-1/5">{cost.type}</div>
-            <div className="w-1/5">{cost.name}</div>
-            <div className="w-1/5">{cost.location}</div>
-            <div className="w-1/5">{cost.employee}</div>
+            <div className="w-1/6">{moment(cost.date).format("M-D-YYYY")}</div>
+            <div className="w-1/6">{cost.type}</div>
+            <div className="w-1/6">{cost.name}</div>
+            <div className="w-1/6">{cost.location}</div>
+            <div className="w-1/6">{cost.employee}</div>
+            <div className="w-1/6">{cost.price}</div>
           </div>
         ))}
       </div>
