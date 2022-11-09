@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import moment from "moment";
 import axios from "axios";
 import { RiDeleteBin7Line } from "react-icons/ri";
-import { HiOutlinePencil } from "react-icons/hi";
+import { HiOutlineArrowCircleDown, HiOutlinePencil } from "react-icons/hi";
 
 import Title from "../components/Title";
 import BarChart from "../components/BarChart";
@@ -11,22 +11,48 @@ import LineChart from "../components/LineChart";
 import EditEvents from "../components/EditEvents.jsx";
 
 const Dashboard = ({ drivers, sum, linedata, events }) => {
+  //manipulate expense data before display on dash graph
+  //remove repeates of dates and sum prices for same date
+  var editedCostData = [];
+  for (var i in linedata) {
+    var copied = false; //flag for repeat
+
+    //if edited is not empty
+    if (editedCostData.length !== 0) {
+      //check for repeat in edited array
+      for (var j in editedCostData) {
+        if (linedata[i].date == editedCostData[j].date) {
+          copied = true;
+          editedCostData[j].price = editedCostData[j].price + linedata[i].price;
+        }
+      }
+      if (!copied) {
+        editedCostData.push({
+          date: linedata[i].date,
+          price: linedata[i].price,
+        });
+      }
+    } else {
+      editedCostData.push({ date: linedata[i].date, price: linedata[i].price });
+    }
+  }
+
   const [userData, setUserData] = useState({
-    labels: linedata.map((data) => moment(data.date).format("MM-DD-YY")),
+    labels: editedCostData.map((data) => moment(data.date).format("MM-DD-YY")),
     datasets: [
       {
         label: "Costs",
-        data: linedata.map((data) => data.price),
+        data: editedCostData.map((data) => data.price),
       },
     ],
   });
 
   const [lineBarData, setLineBarData] = useState({
-    labels: linedata.map((data) => moment(data.date).format("MM-DD-YY")),
+    labels: editedCostData.map((data) => moment(data.date).format("MM-DD-YY")),
     datasets: [
       {
         label: "Costs",
-        data: linedata.map((data) => data.price),
+        data: editedCostData.map((data) => data.price),
       },
     ],
   });
