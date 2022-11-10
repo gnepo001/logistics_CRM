@@ -75,7 +75,7 @@ const Dashboard = ({ drivers, sum, linedata, events }) => {
 
       {/* Top Row */}
       <div className="flex flex-row mt-5 mx-10 h-1/2">
-        <div className=" border-zinc-200 border-solid border-2 rounded-md bg-white flex flex-col w-1/2">
+        <div className="border-zinc-200 border-solid border-2 rounded-md bg-white w-1/2">
           <h1 className="mb-1 bg-[#007EA7] rounded-md text-white text-center w-full">
             Calender
           </h1>
@@ -110,17 +110,17 @@ const Dashboard = ({ drivers, sum, linedata, events }) => {
         </div>
 
         {/* Quardernt 2 */}
-        <div className="flex flex-row my-0 px-12 w-1/2 h-1/2">
+        <div className="flex flex-row w-1/2 h-1/2 mx-10">
           <div className="flex flex-col w-full">
             {/* Q2 Top row */}
-            <div className="flex flex-row h-1/2">
-              <div className="border-zinc-200 border-solid border-2 rounded-md bg-white w-1/2">
+            <div className="flex flex-row h-1/2 justify-between">
+              <div className="border-zinc-200 border-solid border-2 rounded-md bg-white w-[48%]">
                 <h1 className="bg-[#007EA7] rounded-md text-white text-center w-full">
                   Total Income
                 </h1>
                 <div>{sum}</div>
               </div>
-              <div className="border-zinc-200 border-solid border-2 mx-5 rounded-md bg-white w-1/2">
+              <div className="border-zinc-200 border-solid border-2 rounded-md bg-white w-[48%]">
                 <h1 className="bg-[#007EA7] rounded-md text-white text-center w-full">
                   Total Expenses
                 </h1>
@@ -129,12 +129,12 @@ const Dashboard = ({ drivers, sum, linedata, events }) => {
               </div>
             </div>
             {/* Q2 bottom row */}
-            <div className="flex flex-row mt-5 h-1/2">
-              <div className="border-zinc-200 border-solid border-2 rounded-md bg-white w-1/2">
+            <div className="flex flex-row mt-5 h-1/2 w-full justify-between">
+              <div className="border-zinc-200 border-solid border-2 rounded-md bg-white w-[48%]">
                 <h1 className="bg-[#007EA7] rounded-md text-white text-center">
                   Drivers
                 </h1>
-                <div className="h-4/5 overflow-y-scroll">
+                <div className="h-4/5 overflow-y-scroll px-5">
                   {drivers.map((driver) => (
                     <div className="flex truncate" key={driver._id}>
                       <h1>{driver.firstname} &nbsp;</h1>
@@ -143,7 +143,7 @@ const Dashboard = ({ drivers, sum, linedata, events }) => {
                   ))}
                 </div>
               </div>
-              <div className="border-zinc-200 border-solid border-2 mx-5 rounded-md bg-white w-1/2">
+              <div className="border-zinc-200 border-solid border-2 rounded-md bg-white w-[48%]">
                 <h1 className="bg-[#007EA7] rounded-md text-white text-center w-full">
                   Vehicles
                 </h1>
@@ -156,14 +156,14 @@ const Dashboard = ({ drivers, sum, linedata, events }) => {
       </div>
 
       {/* Bottom Half of page */}
-      <div className="flex flex-row mx-10 h-2/3w-full text-center h-1/3 mt-3">
-        <div className="border-zinc-200 border-solid border-2 mt-0 bg-white w-1/2 rounded-md">
+      <div className="flex flex-row mx-10 text-center h-1/3 mt-3">
+        <div className="border-zinc-200 border-solid border-2 bg-white w-1/2 rounded-md">
           <h1 className="bg-[#007EA7] rounded-md text-white text-center w-full">
             Weekly Revenue
           </h1>
           <LineChart data={lineBarData} />
         </div>
-        <div className="border-zinc-200 border-solid border-2 mt-0 bg-white w-1/2 mx-10 rounded-md">
+        <div className="border-zinc-200 border-solid border-2 bg-white w-1/2 mx-10 rounded-md">
           <h1 className="bg-[#007EA7] rounded-md text-white text-center w-full">
             Weekly Costs
           </h1>

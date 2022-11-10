@@ -74,7 +74,7 @@ const ClientInfo = () => {
         </div>
         {clientInvoices &&
           clientInvoices.map((invoice) => (
-            <div key={invoice._id} className="flex justify-around">
+            <div key={invoice._id} className="flex justify-around mx-10">
               <div className="w-1/5">
                 {moment(invoice.date).format("M-D-YYYY")}
               </div>
