@@ -27,7 +27,7 @@ export const getServerSideProps = async () => {
   const sum = await axios.get("http://localhost:5010/sumInvoices");
 
   const linedata = await axios.get(
-    `http://localhost:5010/expenses/fetchtype?Fuel`
+    `http://localhost:5010/expenses/fetchtype?type=all`
   );
   const events = await axios.get(`http://localhost:5010/events`);
 

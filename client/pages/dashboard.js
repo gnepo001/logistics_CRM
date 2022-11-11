@@ -36,6 +36,8 @@ const Dashboard = ({ drivers, sum, linedata, events }) => {
       editedCostData.push({ date: linedata[i].date, price: linedata[i].price });
     }
   }
+  // console.log(linedata);
+  // console.log(editedCostData);
 
   const [userData, setUserData] = useState({
     labels: editedCostData.map((data) => moment(data.date).format("MM-DD-YY")),
