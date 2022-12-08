@@ -2,7 +2,7 @@
 
 |                     Current Rendering alpha                     |                                                          DashBoard Plan |
 | :-------------------------------------------------------------: | ----------------------------------------------------------------------: |
-| <img src="./client/img/alpha_v2.png" width=500px height=250px/> | <img src="./client/img/dashboard_sketch.jpg" width=500px height=250px/> |
+| <img src="./client/img/alpha_v3.png" width=500px height=250px/> | <img src="./client/img/dashboard_sketch.jpg" width=500px height=250px/> |
 
 # Packages/libs used
 
