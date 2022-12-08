@@ -72,7 +72,7 @@ const Dashboard = ({ drivers, sum, linedata, events }) => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className=" flex flex-col">
       <Title title="Dashboard" />
 
       {/* Top Row */}
@@ -157,23 +157,41 @@ const Dashboard = ({ drivers, sum, linedata, events }) => {
         </div>
       </div>
 
-      {/* Bottom Half of page */}
-      <div className="flex flex-row mx-10 text-center h-1/3 mt-3">
+      {/*Bottom Half of page*/}
+
+      {/* <div className="flex flex-row mx-10 text-center h-1/3 mt-3"> */}
+      <div className="flex flex-row mt-5 mx-10 h-1/2">
         <div className="border-zinc-200 border-solid border-2 bg-white w-1/2 rounded-md">
           <h1 className="bg-[#007EA7] rounded-md text-white text-center w-full">
             Weekly Revenue
           </h1>
-          <LineChart data={lineBarData} />
+          <div className=" w-[95%]">
+            <LineChart data={lineBarData} />
+          </div>
         </div>
         <div className="border-zinc-200 border-solid border-2 bg-white w-1/2 mx-10 rounded-md">
           <h1 className="bg-[#007EA7] rounded-md text-white text-center w-full">
             Weekly Costs
           </h1>
-          <BarChart data={userData} />
+          <div className=" w-[95%]">
+            <BarChart data={userData} />
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
+{
+  /* <h1 className="bg-[#007EA7] rounded-md text-white text-center w-full">
+            Weekly Revenue
+          </h1>
+          <LineChart data={lineBarData} /> */
+}
+
+// <h1 className="bg-[#007EA7] rounded-md text-white text-center w-full">
+//   Weekly Costs
+// </h1>
+// <BarChart data={userData} />
 
 export default Dashboard;
