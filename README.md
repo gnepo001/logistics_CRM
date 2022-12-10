@@ -12,6 +12,7 @@ Frontend
 - tailwindcss
 - moment.js
 - chart.js react-chartjs-2
+- react/icons
 
 Backend
 
